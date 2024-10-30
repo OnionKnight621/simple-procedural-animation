@@ -33,11 +33,8 @@ export function drawSegments(ctx, x, y, radius, angle, depth, radiusMultiplier) 
  * Main draw function.
  * @param {CanvasRenderingContext2D} ctx - canvas context.
  */
-export function draw(ctx, depth = 5, initialRadius = 100, initialAngle = 0, radiusMultiplier = 0.9) {
+export function draw(ctx, depth = 5, initialRadius = 100, initialAngle = 0, radiusMultiplier = 0.9, headPositionX = ctx.canvas.width / 2, headPositionY = ctx.canvas.height / 2) {
   ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 
-  const centerX = ctx.canvas.width / 2;
-  const centerY = ctx.canvas.height / 2;
-
-  drawSegments(ctx, centerX, centerY, initialRadius, initialAngle, depth, radiusMultiplier);
+  drawSegments(ctx, headPositionX, headPositionY, initialRadius, initialAngle, depth, radiusMultiplier);
 }
